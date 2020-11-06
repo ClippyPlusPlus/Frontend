@@ -36,6 +36,7 @@
 <script>
 import mqtt from 'mqtt'
 import { playSound } from '../utils/soundPlayer'
+import { MESSAGE_TIMEOUT } from '../utils/constants'
 
 // @ is an alias to /src
 export default {
@@ -45,6 +46,7 @@ export default {
     return {
       client: null,
       text: '',
+      canSendMessage: true,
     }
   },
 
@@ -60,24 +62,39 @@ export default {
  
   methods: {
     sendLocalSound(message) {
-      let objectToPublish = {
-        "sound": message + ".mp3",
-        "source": "local"
-      };
+      if (this.canSendMessage) {
+        let objectToPublish = {
+          "sound": message + ".mp3",
+          "source": "local"
+        };
 
-      this.client.publish("clippy-plus-plus/play", JSON.stringify(objectToPublish));
+        this.client.publish("clippy-plus-plus/play", JSON.stringify(objectToPublish));
+
+        this.messageTimeout();
+      }
     },
 
     sendTextMessage() {
-       let objectToPublish = {
-        "sound": this.text,
-        "source": "text"
-      };
+       if (this.canSendMessage) {
+         let objectToPublish = {
+          "sound": this.text,
+          "source": "text"
+        };
 
-      this.client.publish("clippy-plus-plus/play", JSON.stringify(objectToPublish));
+        this.client.publish("clippy-plus-plus/play", JSON.stringify(objectToPublish));
 
-      this.text = '';
+        this.text = '';
+        this.messageTimeout();
+       }
     },
+
+    messageTimeout() {
+      this.canSendMessage = false;
+      const timeout = setTimeout(() => {
+        this.canSendMessage = true;
+        clearTimeout(timeout);
+      }, MESSAGE_TIMEOUT);
+    }
   }
 }
 </script>
