@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="flex">
+    <div class="flex" v-if="textMessageEnabled">
       <div class="flex-grow">
         <input @keydown.enter="sendTextMessage" v-model="text" type="text" placeholder="Typ iets..." class="w-full border-2 border-gray-200 p-4">
       </div>
@@ -77,12 +77,16 @@ export default {
       text: '',
       canSendMessage: true,
       messageCount: 0,
+      textMessageEnabled: false,
     }
   },
 
   created() {
       const messageCount = localStorage.getItem('messageCount');
-      this.messageCount = parseInt(messageCount);
+      if (messageCount) {
+        this.messageCount = parseInt(messageCount);
+        this.determineUpgrades();
+      }
   },
 
   computed: {
@@ -110,6 +114,10 @@ export default {
     },
 
     sendTextMessage() {
+      if (!this.textMessageEnabled) {
+        return;
+      }
+
       if (this.text.trim() === '') {
         return;
       }
@@ -143,7 +151,14 @@ export default {
   increaseMessageCount () {
       this.messageCount++;
       localStorage.setItem('messageCount', this.messageCount);
+      this.determineUpgrades();
     },
+
+    determineUpgrades() {
+      if (this.messageCount >= 5) {
+        this.textMessageEnabled = true;
+      }
+    }
   }
 }
 </script>
