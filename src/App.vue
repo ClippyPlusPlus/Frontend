@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header 
-      v-bind:clientIsConnected=this.clientIsConnected
-      v-bind:messageCount=this.messageCount
+      :clientIsConnected=clientIsConnected
+      :messageCount=messageCount
     />
 
     <div class="max-w-5xl mx-auto px-6 pt-6" v-if="loading">
@@ -12,7 +12,7 @@
         </svg>
     </div>
 
-    <Home :initialClient=this.client />
+    <Home :initialClient=client />
   </div>
 </template>
 
@@ -74,7 +74,7 @@ export default {
         playSound(receivedObject);
       });
 
-      this.client.on("connect", function() {
+      this.client.on("connect", () => {
         console.log("connected");
         this.clientIsConnected = true;
       });
