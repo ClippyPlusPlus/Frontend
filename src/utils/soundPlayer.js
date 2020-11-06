@@ -6,6 +6,10 @@ export function playSound(payload) {
   if (payload.source === 'text') {
     return playTextToSpeech(payload.sound);
   }
+
+  if (payload.source === 'online') {
+    return playOnlineSound(payload.sound);
+  }
 }
 
 function playLocalSound(soundName) {
@@ -18,4 +22,9 @@ function playTextToSpeech(text) {
   speechToText.text = text;
   speechToText.lang = 'nl';
   window.speechSynthesis.speak(speechToText);
+}
+
+function playOnlineSound(url) {
+  let audio = new Audio(url);
+  audio.play();
 }
