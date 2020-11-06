@@ -1,4 +1,4 @@
 export function playLocalSound(soundName) {
-  let audio = new Audio("local-audio/" + soundName);
+  let audio = new Audio("/Sounds/" + soundName);
   audio.play();
 }
