@@ -1,6 +1,6 @@
 <template>
-  <div class="max-w-5xl mx-auto py-6">
-    <div class="grid grid-cols-2 gap-4">
+  <div class="max-w-5xl mx-auto p-6">
+    <div class="grid md:grid-cols-2 gap-4">
       <button @click="sendMessage('Applaus')" class="transition duration-300 ease-in-out bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-500 hover:to-teal-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-blue-900 hover:text-blue-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
         Applaus 👏
       </button>
@@ -19,12 +19,6 @@
       <button @click="sendMessage('Toilet')" class="transition duration-300 ease-in-out bg-gradient-to-r from-gray-400 to-gray-500 hover:from-gray-500 hover:to-gray-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-gray-900 hover:text-gray-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
         Toilet 🧻
       </button>
-    </div>
-
-    <div class="my-8"></div>
-
-    <div @click="sendMessage('applause')" class="cursor-pointer">
-      Knopje
     </div>
   </div>
 </template>

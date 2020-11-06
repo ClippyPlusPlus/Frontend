@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-     <div class="max-w-5xl mx-auto pt-6 flex items-center justify-between">
+     <div class="max-w-5xl mx-auto px-6 pt-6 flex items-center justify-between">
         <div class="inline-block bg-blue-700 p-3 text-blue-100 text-xl font-medium rounded">
           Clippy++
         </div>
