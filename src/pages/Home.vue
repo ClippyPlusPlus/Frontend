@@ -23,7 +23,7 @@
         Cleaning 💩🧹
       </button>
       <button @click="sendMessage('Modem')" class="transition duration-300 ease-in-out bg-gradient-to-r from-gray-400 to-gray-500 hover:from-gray-500 hover:to-gray-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-gray-900 hover:text-gray-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
-        Modem 🖀
+        Modem 👾
       </button>
     </div>
   </div>
@@ -31,7 +31,7 @@
 
 <script>
 import mqtt from 'mqtt'
-import { playLocalSound } from '../utils/soundPlayer'
+import { playSound } from '../utils/soundPlayer'
 
 // @ is an alias to /src
 export default {
@@ -49,7 +49,7 @@ export default {
 
     this.client.on("message", function (topic, payload) {
       var receivedObject = JSON.parse(payload);
-      playLocalSound(receivedObject.sound);
+      playSound(receivedObject);
     });
   },
  
