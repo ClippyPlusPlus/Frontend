@@ -22,8 +22,8 @@ export default {
   },
  
   methods: {
-    sendMessage() {
-      console.log("message");
+    sendMessage(messsage) {
+      console.log(messsage);
     }
   }
 }
