@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header 
-      :clientIsConnected=clientIsConnected
-      :messageCount=messageCount
+      :clientIsConnected="clientIsConnected"
+      :messageCount="messageCount"
     />
 
     <div class="max-w-5xl mx-auto px-6 pt-6" v-if="loading">
@@ -12,7 +12,7 @@
         </svg>
     </div>
 
-    <Home :initialClient=client />
+    <Home :initialClient="client" v-if="!loading" />
   </div>
 </template>
 
