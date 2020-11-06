@@ -23,10 +23,10 @@
       <button @click="sendLocalSound('Toilet')" class="transition duration-300 ease-in-out bg-gradient-to-r from-gray-400 to-gray-500 hover:from-gray-500 hover:to-gray-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-gray-900 hover:text-gray-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
         Toilet 🧻
       </button>
-      <button @click="sendLocalSound('Vacuum')" class="transition duration-300 ease-in-out bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-yellow-900 hover:text-yellow-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('Vacuum')" class="transition duration-300 ease-in-out bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-yellow-500 hover:to-orange-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-yellow-900 hover:text-yellow-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
         Cleaning 💩🧹
       </button>
-      <button @click="sendLocalSound('Modem')" class="transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('Modem')" class="transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
         Modem 👾
       </button>
     </div>
