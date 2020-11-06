@@ -49,7 +49,7 @@ export default {
   },
 
   created() {
-    this.client = mqtt.connect('ws://mqtt.eclipse.org:80/mqtt');
+    this.client = mqtt.connect('wss://mqtt.eclipse.org:443/mqtt');
     this.client.subscribe("clippy-plus-plus/play");
 
     this.client.on("message", function (topic, payload) {
