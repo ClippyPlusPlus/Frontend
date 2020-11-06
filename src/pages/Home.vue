@@ -33,28 +33,28 @@
     </div>
 
     <div class="grid md:grid-cols-2 gap-4">
-      <button @click="sendLocalSound('Applause')" class="transition duration-300 ease-in-out bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-500 hover:to-teal-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-blue-900 hover:text-blue-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('Applause')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-teal-400 to-blue-500 text-2xl text-blue-900 hover:text-blue-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-blue-500 hover:to-teal-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Applaus 👏
       </button>
-      <button @click="sendLocalSound('IcqUhOh')" class="transition duration-300 ease-in-out bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-orange-500 hover:to-yellow-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-orange-900 hover:text-orange-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('IcqUhOh')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-yellow-400 to-orange-500 text-2xl text-orange-900 hover:text-orange-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-orange-500 hover:to-yellow-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Uh oh 😵
       </button>
-      <button @click="sendLocalSound('CarEngine')" class="transition duration-300 ease-in-out bg-gradient-to-r from-pink-400 to-red-500 hover:from-red-500 hover:to-pink-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-red-900 hover:text-red-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('CarEngine')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-pink-400 to-red-500 text-2xl text-red-900 hover:text-red-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-red-500 hover:to-pink-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Auto 🚗
       </button>
-      <button @click="sendLocalSound('HumanVoice')" class="transition duration-300 ease-in-out bg-gradient-to-r from-indigo-400 to-purple-500 hover:from-purple-500 hover:to-indigo-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-purple-900 hover:text-purple-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('HumanVoice')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-indigo-400 to-purple-500 text-2xl text-purple-900 hover:text-purple-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-purple-500 hover:to-indigo-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Helpdesk 👨‍💻
       </button>
-      <button @click="sendLocalSound('Cricket')" class="transition duration-300 ease-in-out bg-gradient-to-r from-green-400 to-teal-500 hover:from-teal-500 hover:to-green-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-teal-900 hover:text-teal-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('Cricket')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-green-400 to-teal-500 text-2xl text-teal-900 hover:text-teal-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-teal-500 hover:to-green-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Crickets 🦗
       </button>      
-      <button @click="sendLocalSound('Toilet')" class="transition duration-300 ease-in-out bg-gradient-to-r from-gray-400 to-gray-500 hover:from-gray-500 hover:to-gray-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-gray-900 hover:text-gray-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('Toilet')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-gray-400 to-gray-500 text-2xl text-gray-900 hover:text-gray-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-gray-500 hover:to-gray-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Toilet 🧻
       </button>
-      <button @click="sendLocalSound('Vacuum')" class="transition duration-300 ease-in-out bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-yellow-500 hover:to-orange-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-yellow-900 hover:text-yellow-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('Vacuum')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-orange-400 to-yellow-500 text-2xl text-yellow-900 hover:text-yellow-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-yellow-500 hover:to-orange-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Cleaning 💩🧹
       </button>
-      <button @click="sendLocalSound('Modem')" class="transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
+      <button @click="sendLocalSound('Modem')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Modem 👾
       </button>
     </div>
