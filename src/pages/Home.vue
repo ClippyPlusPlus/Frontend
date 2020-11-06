@@ -68,9 +68,7 @@ export default {
           "source": "local"
         };
 
-        this.client.publish("clippy-plus-plus/play", JSON.stringify(objectToPublish));
-
-        this.messageTimeout();
+        this.emitMessage(objectToPublish);
       }
     },
 
@@ -81,11 +79,16 @@ export default {
           "source": "text"
         };
 
-        this.client.publish("clippy-plus-plus/play", JSON.stringify(objectToPublish));
+        this.emitMessage(objectToPublish);
 
         this.text = '';
-        this.messageTimeout();
        }
+    },
+
+    emitMessage(objectToPublish) {
+        this.client.publish("clippy-plus-plus/play", JSON.stringify(objectToPublish));
+        this.$eventBus.$emit('messageSent');
+        this.messageTimeout();
     },
 
     messageTimeout() {

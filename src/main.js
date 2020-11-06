@@ -5,6 +5,8 @@ import './assets/css/app.css'
 
 Vue.config.productionTip = false
 
+Vue.prototype.$eventBus = new Vue();
+
 new Vue({
   router,
   render: h => h(App)
