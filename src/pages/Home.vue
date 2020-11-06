@@ -64,6 +64,7 @@
 <script>
 import mqtt from 'mqtt'
 import { MESSAGE_TIMEOUT } from '../utils/constants'
+import { MessageToPublish } from '../utils/messageToPublish'
 
 // @ is an alias to /src
 export default {
@@ -104,12 +105,8 @@ export default {
   methods: {
     sendLocalSound(message) {
       if (this.canSendMessage) {
-        let objectToPublish = {
-          "sound": message + ".mp3",
-          "source": "local"
-        };
-
-        this.emitMessage(objectToPublish);
+        let messageToPublish = new MessageToPublish(message + ".mp3", "local");
+        this.emitMessage(messageToPublish);
       }
     },
 
@@ -122,16 +119,12 @@ export default {
         return;
       }
 
-       if (this.canSendMessage) {
-         let objectToPublish = {
-          "sound": this.text,
-          "source": "text"
-        };
-
-        this.emitMessage(objectToPublish);
+      if (this.canSendMessage) {
+        let messageToPublish = new MessageToPublish(this.text, "text");
+        this.emitMessage(messageToPublish);
 
         this.text = '';
-       }
+      }
     },
 
     emitMessage(objectToPublish) {
