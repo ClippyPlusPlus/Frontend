@@ -1,5 +1,9 @@
 <template>
-  <div class="max-w-5xl mx-auto p-6">
+  <div class="max-w-5xl mx-auto p-6 space-y-6">
+    <div>
+      <input @keydown.enter="sendTextMessage" v-model="text" type="text" placeholder="Typ iets..." class="w-full border-2 border-gray-200 p-4">
+    </div>
+
     <div class="grid md:grid-cols-2 gap-4">
       <button @click="sendMessage('Applause')" class="transition duration-300 ease-in-out bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-500 hover:to-teal-600 transform hover:-translate-y-1 hover:scale-110 text-2xl text-blue-900 hover:text-blue-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg">
         Applaus 👏
@@ -40,6 +44,7 @@ export default {
   data() {
     return {
       client: null,
+      text: '',
     }
   },
 
@@ -61,7 +66,18 @@ export default {
       };
 
       this.client.publish("clippy-plus-plus/play", JSON.stringify(objectToPublish));
-    }
+    },
+
+    sendTextMessage() {
+       let objectToPublish = {
+        "sound": this.text,
+        "source": "text"
+      };
+
+      this.client.publish("clippy-plus-plus/play", JSON.stringify(objectToPublish));
+
+      this.text = '';
+    },
   }
 }
 </script>
