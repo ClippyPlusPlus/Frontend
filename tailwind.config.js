@@ -7,6 +7,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  variants: {},
+  variants: ['responsive', 'group-hover', 'disabled', 'hover', 'focus', 'active'],
   plugins: [],
 }
