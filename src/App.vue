@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <Header 
-      :clientIsConnected="clientIsConnected"
-      :messageCount="messageCount"
-    />
+    <Header :clientIsConnected="clientIsConnected" />
 
     <div class="max-w-5xl mx-auto px-6 pt-6" v-if="loading">
         <svg class="animate-spin h-32 w-32 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -34,16 +31,12 @@ export default {
   data() {
     return {
       loading: true,
-      messageCount: 0,
       client: null,
       clientIsConnected: false
     }
   },
 
   created() {
-    this.$eventBus.$on('messageSent', this.increaseMessageCount);
-    const messageCount = localStorage.getItem('messageCount');
-    this.messageCount = messageCount;
     this.initializeClient();
   },
 
@@ -60,11 +53,6 @@ export default {
   },
 
   methods: {
-    increaseMessageCount () {
-      this.messageCount++;
-      localStorage.setItem('messageCount', this.messageCount);
-    },
-
     initializeClient() {
       this.client = mqtt.connect('wss://mqtt.eclipse.org:443/mqtt');
       this.client.subscribe("clippy-plus-plus/play");
