@@ -35,29 +35,20 @@
 
 <script>
 import mqtt from 'mqtt'
-import { playSound } from '../utils/soundPlayer'
 import { MESSAGE_TIMEOUT } from '../utils/constants'
 
 // @ is an alias to /src
 export default {
   name: 'Home',
 
+  props: [ "initialClient" ],
+
   data() {
     return {
-      client: null,
+      client: this.initialClient,
       text: '',
       canSendMessage: true,
     }
-  },
-
-  created() {
-    this.client = mqtt.connect('wss://mqtt.eclipse.org:443/mqtt');
-    this.client.subscribe("clippy-plus-plus/play");
-
-    this.client.on("message", function (topic, payload) {
-      var receivedObject = JSON.parse(payload);
-      playSound(receivedObject);
-    });
   },
  
   methods: {

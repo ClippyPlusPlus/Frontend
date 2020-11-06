@@ -6,8 +6,6 @@ export function playSound(payload) {
   if (payload.source === 'text') {
     return playTextToSpeech(payload.sound);
   }
-
-  console.log(`Could not play source=${payload.source}`)
 }
 
 function playLocalSound(soundName) {

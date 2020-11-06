@@ -10,13 +10,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    beforeEnter: (to, from, next) => {
-      if (window.location.hostname === 'localhost') {
-        next();
-      } else {
-        setTimeout(() => next(), MESSAGE_TIMEOUT);
-      }
-    }
   },
 ]
 
