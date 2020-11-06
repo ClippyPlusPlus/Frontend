@@ -48,7 +48,9 @@ export default {
     }
   },
   created() {
-    this.$eventBus.$on('messageSent', this.increaseMessageCount)
+    this.$eventBus.$on('messageSent', this.increaseMessageCount);
+    const messageCount = localStorage.getItem('messageCount');
+    this.messageCount = messageCount;
   },
   mounted() {
     if (window.location.hostname === 'localhost') {
@@ -77,6 +79,7 @@ export default {
   methods: {
       increaseMessageCount () {
         this.messageCount++;
+        localStorage.setItem('messageCount', this.messageCount);
       }
   }
 }
