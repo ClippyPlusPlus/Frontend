@@ -10,6 +10,10 @@
     </div>
 
     <Home :initialClient="client" v-if="!loading" />
+
+    <div class="max-w-5xl mx-auto px-6 pt-6 text-center text-sm text-gray-600 py-6">
+      Copyright &copy; Infinithon Team Clippy++ 2020 - No Rights Reserved - Eet meer fruit
+    </div>
   </div>
 </template>
 
