@@ -60,7 +60,7 @@
       <button @click="sendLocalSound('Modem')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Modem 👾
       </button>
-      <button @click="sendLocalSound('NotificationSpam')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-gray-400 to-gray-500 text-2xl text-gray-900 hover:text-gray-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-gray-500 hover:to-gray-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+      <button @click="sendLocalSound('Zaag')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-gray-400 to-gray-500 text-2xl text-gray-900 hover:text-gray-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-gray-500 hover:to-gray-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Hé, een klusjesman 🛠️
       </button>
       <button @click="sendLocalSound('WilhelmScream')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-purple-400 to-indigo-500 text-2xl text-indigo-900 hover:text-indigo-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-indigo-500 hover:to-purple-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
