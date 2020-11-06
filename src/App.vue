@@ -62,10 +62,24 @@ export default {
         playSound(receivedObject);
       });
 
-      this.client.on("connect", () => {
-        console.log("connected");
-        this.clientIsConnected = true;
-      });
+      const connectedClientEvents = ["connect"];
+      const disconnectedClientEvents = ["close", "disconnect", "offline", "error", "end"];
+
+      for (const connectedEvent of connectedClientEvents) {
+        this.client.on(connectedEvent, () => {
+          this.setClientIsConnected(true);
+        });
+      }
+
+      for (const disconnectedEvent of disconnectedClientEvents) {
+        this.client.on(disconnectedEvent, () => {
+          this.setClientIsConnected(false);
+        });
+      }
+    },
+
+    setClientIsConnected (isConnected) {
+      this.clientIsConnected = isConnected
     }
   }
 }
