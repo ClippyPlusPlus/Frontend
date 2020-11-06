@@ -16,7 +16,7 @@ function playLocalSound(soundName) {
 }
 
 function playTextToSpeech(text) {
-  var speechToText = new SpeechSynthesisUtterance();
+  let speechToText = new SpeechSynthesisUtterance();
   speechToText.text = text;
   speechToText.lang = 'nl';
   window.speechSynthesis.speak(speechToText);
