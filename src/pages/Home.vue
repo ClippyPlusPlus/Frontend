@@ -23,6 +23,7 @@
 
     <div class="my-8"></div>
 
+    <Player />
     <div @click="sendMessage('applause')" class="cursor-pointer">
       Knopje
     </div>
@@ -30,9 +31,14 @@
 </template>
 
 <script>
+import Player from '../components/Player.vue'
+
 // @ is an alias to /src
 export default {
   name: 'Home',
+  components: {
+    Player,
+  },
 
   data() {
     return {
