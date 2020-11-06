@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-4">
+    <div class="grid md:grid-cols-3 gap-4">
       <button @click="sendLocalSound('Applause')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-teal-400 to-blue-500 text-2xl text-blue-900 hover:text-blue-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-blue-500 hover:to-teal-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Applaus 👏
       </button>
@@ -51,11 +51,59 @@
       <button @click="sendLocalSound('Toilet')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-gray-400 to-gray-500 text-2xl text-gray-900 hover:text-gray-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-gray-500 hover:to-gray-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Toilet 🧻
       </button>
+      <button @click="sendLocalSound('DixieHorn')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Toeter 📯
+      </button>
       <button @click="sendLocalSound('Vacuum')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-orange-400 to-yellow-500 text-2xl text-yellow-900 hover:text-yellow-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-yellow-500 hover:to-orange-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
-        Cleaning 💩🧹
+        Schoonmaak 💩🧹
       </button>
       <button @click="sendLocalSound('Modem')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
         Modem 👾
+      </button>
+      <button @click="sendLocalSound('NotificationSpam')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Hé, een klusjesman 🛠️
+      </button>
+      <button @click="sendLocalSound('WilhelmScream')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Hellepie 😱
+      </button>
+      <button @click="sendLocalSound('PreWeekendDansje')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Bijna weekend! 🦩
+      </button>
+      <button @click="sendLocalSound('PenClick')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Penklik 🖊️
+      </button>
+      <button @click="sendLocalSound('Barking')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Hond 🌭
+      </button>
+      <button @click="sendLocalSound('Coffee')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Koffie ☕
+      </button>
+      <button @click="sendLocalSound('NotificationSpam')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Hé, een telefoontje 📞
+      </button>
+      <button @click="sendLocalSound('Keyboard')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Toetsenbord ⌨️
+      </button>
+      <button @click="sendLocalSound('Glas')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Kapot 💔
+      </button>
+      <button @click="sendLocalSound('Doorbell')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Deurbel 🚪
+      </button>
+      <button @click="sendLocalSound('DoorbellMelody')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Fancy deurbel 🕰️
+      </button>
+      <button @click="sendLocalSound('Eten')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Lunch 🥪
+      </button>
+      <button @click="sendLocalSound('NotificationSpam')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Hé, een berichtje ✉️
+      </button>
+      <button @click="sendLocalSound('RadioInterference')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Radio 📻
+      </button>
+      <button @click="sendLocalSound('PilfingerDansen')" :class="['transition duration-300 ease-in-out bg-gradient-to-r from-red-400 to-pink-500 text-2xl text-pink-900 hover:text-pink-200 rounded px-6 py-12 hover:z-10 hover:shadow-lg', { 'hover:from-pink-500 hover:to-red-600 transform hover:-translate-y-1 hover:scale-110': canSendMessage}]">
+        Liedje 🎵
       </button>
     </div>
   </div>
