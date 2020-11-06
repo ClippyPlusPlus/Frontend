@@ -7,14 +7,13 @@
    </head>
    <body>
       <script>
-          var client = mqtt.connect('ws://127.0.0.1:9001')
-            client.subscribe("clippy-plus-plus/play")
+          var client = mqtt.connect('ws://mqtt.eclipse.org:80/mqtt');
+         client.subscribe("clippy-plus-plus/play")
 
-            client.on("message", function (topic, payload) {
-                alert([topic, payload].join(": "))
-                client.end()
-            })
-
+         client.on("message", function (topic, payload) {
+            alert([topic, payload].join(": "))
+            client.end()
+         });
       </script>
    </body>
 </html>
